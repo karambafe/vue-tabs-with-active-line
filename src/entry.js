@@ -1,5 +1,5 @@
 // Import vue component
-import component from './vue-tabs-with-active-line.vue';
+import component from './VueTabsWithActiveLine.vue';
 
 // install function executed by Vue.use()
 function install(Vue) {
