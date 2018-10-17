@@ -1,14 +1,14 @@
 # Vue-tabs-with-active-line
 
-Vue2 simple component, that allows you to make tabs with moving bottom line
+Simple Vue 2 component, that allows you to make tabs with moving bottom line
 
 ![Alt Text](https://media.giphy.com/media/NTDhntg2ySo7rGLaRm/giphy.gif)
 
 ## Demo and example
 
-[Demo](https://karambafe.github.io/vue-tabs-with-active-line/)
+Live demo to play with: [Demo-link](https://karambafe.github.io/vue-tabs-with-active-line/)
 
-[Example](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Simple.vue)
+Code from the demo:  [Code-link](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Simple.vue)
 
 ## Install
 
@@ -19,13 +19,13 @@ npm install vue-tabs-with-active-line --save
 
 ## Usage
 
-At first, import the component:
+Import the component
 
 ```javascript
 import Tabs from 'vue-tabs-with-active-line';
 ```
 
-Second, define the data for props `tabs`, `currentTab`, and method for `onClick` callback
+Define the data for props `tabs`, `currentTab`, and method for `onClick` callback
 
 ```javascript
 export default {
@@ -33,13 +33,11 @@ export default {
     Tabs,
   },
   data: () => ({
-    tabs: [{
-      title: 'Tab 1',
-      value: 'tab1',
-    }, {
-      title: 'Tab 2',
-      value: 'tab2',
-    }],
+    tabs: [
+      { title: 'Tab 1', value: 'tab1' },
+      { title: 'Tab 2', value: 'tab2' },
+      { title: 'Tab 3', value: 'tab3', }
+    ],
     currentTab: 'tab1',
   }),
   methods: {
@@ -51,13 +49,31 @@ export default {
 </script>
 ```
 
-Finally, add styles for component elements classes:
 
-* `tabs` - component wrapper. Be sure to add  `position: relative;` for this class.
-* `tabs__item` - button
-* `tabs__item_active` - active button
-* `tabs__active-line` - bottom line. Be sure to add `position: absolute;` and `bottom, left, height, background-color` properties for this class
+ here's the HTML structure generated from the data entered:
 
+```html
+  <nav class="tabs">
+    <button class="tabs__item tabs__item_active"> Tab 1 </button> <!-- active tab -->
+    <button class="tabs__item"> Tab 2 </button>
+    <button class="tabs__item"> Tab 3 </button>
+
+    <div class="tabs__active-line"></div>
+  </nav>
+```
+
+Finally, add some styles for component elements:
+
+* `.tabs` - component wrapper
+* `.tabs__item` - button
+* `.tabs__item_active` - active button
+* `.tabs__active-line` - bottom line
+
+
+Be sure to add  `position: relative;` for `.tabs` class
+
+and `position: absolute;` with `bottom, left, height, background-color` properties for `.tabs__active-line` class
+##### Below you'll find basic style in CSS and SCSS
 <details><summary>CSS EXAMPLE</summary>
 
 ```css
@@ -116,18 +132,64 @@ Finally, add styles for component elements classes:
 ```
 
 </details>
+<details><summary>SCSS Example</summary>
 
-## HTML structure:
+```scss
+.tabs {
+  position: relative;
+  margin: 0 auto;
 
-```html
-  <nav class="tabs">
-    <button class="tabs__item"> button title </button> 
-    <button class="tabs__item"> button title </button> 
-    <button class="tabs__item tabs__item_active"> button title </button> // active tab
+  &__active-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.4s ease, width 0.4s ease;
+  }
 
-    <div class="tabs__active-line"></div>
-  </nav>
+  &__item {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    color: gray;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &_active {
+      color: black;
+    }
+
+    &:hover {
+      border-bottom: 2px solid gray;
+      color: black;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid gray;
+      color: black;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
 ```
+
+</details>
 
 ## License
 
