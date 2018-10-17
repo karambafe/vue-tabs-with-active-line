@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Simple from '../example/Simple.vue';
+import Simple from '../examples/Simple.vue';
 
 export default {
   components: {
