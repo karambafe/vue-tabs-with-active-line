@@ -6,7 +6,7 @@ Vue2 simple component, that allows you to make tabs with moving bottom line
 
 ## Demo and example
 
-[Demo](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/demo)
+[Demo](https://karambafe.github.io/vue-tabs-with-active-line/)
 
 [Example](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Simple.vue)
 
