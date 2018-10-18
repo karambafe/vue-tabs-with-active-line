@@ -220,6 +220,20 @@ Required: true
 
 Returns new tab value when clicked
 
+## How to run it locally
+
+1. Clone repository: `git clone git@github.com:karambafe/vue-tabs-with-active-line.git`
+2. Install cli-service-global: `npm install -g @vue/cli-service-global` [Vue CLI 3 docs](https://cli.vuejs.org/guide/prototyping.html)
+3. Run any vue file with hot reload and static server: `vue serve demo-src/App.vue`
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2018 Vitaly. For more information see [`LICENSE`](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/LICENSE).
+This project is licensed under the MIT license, Copyright (c) 2018 karambafe. For more information see [`LICENSE`](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/LICENSE).
