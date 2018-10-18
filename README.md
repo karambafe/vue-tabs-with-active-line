@@ -191,6 +191,35 @@ and `position: absolute;` with `bottom, left, height, background-color` properti
 
 </details>
 
+## Props
+
+##### `tabs`
+
+type: `Array`
+
+Required: true
+
+The array must contain objects with the following properties:
+
+ * `title` - required, type `string`. Title of tab
+
+ * `value` - required, type `string`. Value of tab
+
+
+##### `currentTab`
+
+type: `String`
+
+Required: true
+
+##### `onClick`
+
+type: `Function`
+
+Required: true
+
+Returns new tab value when clicked
+
 ## License
 
 This project is licensed under the MIT license, Copyright (c) 2018 Vitaly. For more information see [`LICENSE`](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/LICENSE).
