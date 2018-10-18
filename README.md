@@ -4,6 +4,11 @@ Simple Vue 2 component, that allows you to make tabs with moving bottom line
 
 ![Alt Text](https://media.giphy.com/media/NTDhntg2ySo7rGLaRm/giphy.gif)
 
+[![npm](https://img.shields.io/npm/v/vue-tabs-with-active-line.svg)](https://www.npmjs.com/package/vue-tabs-with-active-line)
+[![npm](https://img.shields.io/npm/dm/vue-tabs-with-active-line.svg)](https://www.npmjs.com/package/vue-tabs-with-active-line)
+[![npm](https://img.shields.io/npm/dt/vue-tabs-with-active-line.svg)](https://www.npmjs.com/package/vue-tabs-with-active-line)
+[![David](https://david-dm.org/karambafe/vue-tabs-with-active-line.svg)](https://david-dm.org/karambafe/vue-tabs-with-active-line)
+
 ## Demo and example
 
 Live demo to play with: [Demo-link](https://karambafe.github.io/vue-tabs-with-active-line/)
