@@ -7,6 +7,7 @@
       :ref="tab.value"
       :key="tab.title"
       :class="{ 'tabs__item_active' : tab.value === currentTab }"
+      :disabled="tab.disabled || false"
       @click="handleClick(tab.value)"
     >
       {{ tab.title }}
