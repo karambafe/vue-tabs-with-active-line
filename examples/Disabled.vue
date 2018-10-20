@@ -12,10 +12,7 @@
         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
         dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
         aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non
-        numquam eius modi tempora incidunt ut labore
-        et dolore magnam aliquam quaerat voluptatem.
+        voluptatem sequi nesciunt. Neque porro quisquam est
       </div>
       <div v-if="currentTab === 'tab2'">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -28,6 +25,16 @@
       <div v-if="currentTab === 'tab3'">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
         voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+        occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+        mollitia animi, id est laborum et dolorum fuga.
+        occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+        mollitia animi, id est laborum et dolorum fuga.
+      </div>
+      <div v-if="currentTab === 'tab4'">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+        occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+        mollitia animi, id est laborum et dolorum fuga.
         occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
         mollitia animi, id est laborum et dolorum fuga.
       </div>
@@ -45,13 +52,12 @@ const TABS = [{
   title: 'Tab 2',
   value: 'tab2',
 }, {
-  title: 'Disabled',
+  title: 'Disabled Tab',
   value: 'tab3',
   disabled: true,
 }, {
   title: 'Tab 4',
   value: 'tab4',
-  disabled: true,
 }];
 
 export default {
@@ -92,10 +98,6 @@ export default {
   transition: all 0.25s;
 }
 
-.tabs__item_active {
-  color: black;
-}
-
 .tabs__item:hover {
   border-bottom: 2px solid gray;
   color: black;
@@ -104,11 +106,15 @@ export default {
 .tabs__item:focus {
   outline: none;
   border-bottom: 2px solid gray;
-  color: black;
+  color: blue;
+}
+
+.tabs__item_active {
+  color: blue;
 }
 
 .tabs__item:disabled {
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid transparent;
   color: gray;
   cursor: default;
 }
@@ -126,7 +132,7 @@ export default {
   bottom: 0;
   left: 0;
   height: 2px;
-  background-color: black;
+  background-color: blue;
   transition: transform 0.4s ease, width 0.4s ease;
 }
 

@@ -1,16 +1,22 @@
 <template>
   <div class="container">
     <h1>Vue tabs with active line</h1>
+    <h3>Default:</h3>
     <simple />
+
+    <h3>Disabled tab:</h3>
+    <disabled />
   </div>
 </template>
 
 <script>
 import Simple from '../examples/Simple.vue';
+import Disabled from '../examples/Disabled.vue';
 
 export default {
   components: {
     Simple,
+    Disabled,
   },
 };
 </script>
@@ -22,6 +28,10 @@ export default {
 
   h1 {
     text-align: center;
+  }
+
+  h3 {
+    align-self: flex-start;
   }
 
   .container {
