@@ -1,18 +1,24 @@
 <template>
-  <nav class="tabs">
+  <nav class="tabs" :class="wrapperClass">
     <button
       class="tabs__item"
       type="button"
       v-for="tab in tabs"
       :ref="tab.value"
       :key="tab.title"
-      :class="{ 'tabs__item_active' : tab.value === currentTab }"
+      :class="[
+        { 'tabs__item_active' : tab.value === currentTab },
+        tab.value === currentTab && tabActiveClass ? tabActiveClass: '',
+        tabClass,
+      ]"
+      :disabled="tab.disabled || false"
       @click="handleClick(tab.value)"
     >
       {{ tab.title }}
     </button>
     <div
       class="tabs__active-line"
+      :class="lineClass"
       :style="{ width: `${activeLineWidth}px`, transform: `translateX(${activeLineOffset}px)` }"
     />
   </nav>
@@ -29,6 +35,22 @@ export default {
     tabs: {
       type: Array,
       required: true,
+    },
+    wrapperClass: {
+      type: String,
+      required: false,
+    },
+    tabClass: {
+      type: String,
+      required: false,
+    },
+    tabActiveClass: {
+      type: String,
+      required: false,
+    },
+    lineClass: {
+      type: String,
+      required: false,
     },
   },
   watch: {
