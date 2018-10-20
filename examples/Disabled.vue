@@ -3,6 +3,10 @@
     <tabs
       :tabs="tabs"
       :currentTab="currentTab"
+      :wrapper-class="'disabled-tabs'"
+      :tab-class="'disabled-tabs__item'"
+      :tab-active-class="'disabled-tabs__item_active'"
+      :line-class="'disabled-tabs__active-line'"
       @onClick="handleClick"
     />
     <div class="content">
@@ -76,64 +80,64 @@ export default {
 }
 </script>
 
-<style>
-.tabs {
+<style lang="scss">
+.disabled-tabs {
   position: relative;
   margin: 0 auto;
-}
 
-.tabs__item {
-  display: inline-block;
-  margin: 0 5px;
-  padding: 10px;
-  padding-bottom: 8px;
-  font-size: 16px;
-  letter-spacing: 0.8px;
-  color: gray;
-  text-decoration: none;
-  border: none;
-  background-color: transparent;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.25s;
-}
+  &__item {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    color: gray;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
 
-.tabs__item:hover {
-  border-bottom: 2px solid gray;
-  color: black;
-}
+    &:hover {
+      border-bottom: 2px solid gray;
+      color: black;
+    }
 
-.tabs__item:focus {
-  outline: none;
-  border-bottom: 2px solid gray;
-  color: blue;
-}
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid gray;
+      color: blue;
+    }
 
-.tabs__item_active {
-  color: blue;
-}
+    &_active {
+      color: blue;
+    }
 
-.tabs__item:disabled {
-  border-bottom: 2px solid transparent;
-  color: gray;
-  cursor: default;
-}
+    &:disabled {
+      border-bottom: 2px solid transparent;
+      color: gray;
+      cursor: default;
+    }
 
-.tabs__item:first-child {
-  margin-left: 0;
-}
+    .tabs__item:first-child {
+      margin-left: 0;
+    }
 
-.tabs__item:last-child {
-  margin-right: 0;
-}
+    .tabs__item:last-child {
+      margin-right: 0;
+    }
+  }
 
-.tabs__active-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background-color: blue;
-  transition: transform 0.4s ease, width 0.4s ease;
+  &__active-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: blue;
+    transition: transform 0.4s ease, width 0.4s ease;
+  }
 }
 
 .content {

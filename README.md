@@ -210,6 +210,8 @@ The array must contain objects with the following properties:
 
  * `value` - required, type `string`. Value of tab
 
+ * `disabled` - optional, type `string`. Disabled attribute
+
 
 ##### `currentTab`
 

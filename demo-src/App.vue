@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Vue tabs with active line</h1>
     <h3>Default:</h3>
-    <simple />
+    <default />
 
     <h3>Disabled tab:</h3>
     <disabled />
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Simple from '../examples/Simple.vue';
+import Default from '../examples/Default.vue';
 import Disabled from '../examples/Disabled.vue';
 
 export default {
   components: {
-    Simple,
+    Default,
     Disabled,
   },
 };
