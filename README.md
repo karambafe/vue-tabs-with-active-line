@@ -13,7 +13,7 @@ Simple Vue 2 component, that allows you to make tabs with moving bottom line
 
 Live demo to play with: [Demo-link](https://karambafe.github.io/vue-tabs-with-active-line/)
 
-Code from the demo:  [Code-link](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Simple.vue)
+Code from the demo:  [Default-example](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Default.vue) [Disabled-example](https://github.com/karambafe/vue-tabs-with-active-line/blob/master/examples/Disabled.vue)
 
 ## Install
 
@@ -200,9 +200,7 @@ and `position: absolute;` with `bottom, left, height, background-color` properti
 
 ##### `tabs`
 
-type: `Array`
-
-Required: true
+type: `Array`, required: `true`
 
 The array must contain objects with the following properties:
 
@@ -215,17 +213,39 @@ The array must contain objects with the following properties:
 
 ##### `currentTab`
 
-type: `String`
+type: `String`, required: `true`.
 
 Required: true
 
 ##### `onClick`
 
-type: `Function`
-
-Required: true
+type: `Function`, required: `true`.
 
 Returns new tab value when clicked
+
+#### `wrapperClass`
+
+type: `String`, required: `false`.
+
+Custom class for container
+
+#### `tabClass`
+
+type: `String`, required: `false`.
+
+Custom class for tab item
+
+#### `tabActiveClass`
+
+type: `String`, required: `false`.
+
+Custom class for active tab item
+
+#### `lineClass`
+
+type: `String`, required: `false`.
+
+Custom class for active line
 
 ## How to run it locally
 
