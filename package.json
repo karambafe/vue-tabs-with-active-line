@@ -20,6 +20,7 @@
     "build:demo": "rimraf docs && rollup --config build/demo.rollup.config.js --format iife",
     "lint": "eslint --ignore-path .gitignore . --ignore-pattern dist --ignore-pattern docs",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "eslintConfig": {
