@@ -13,9 +13,9 @@
       ]"
       :disabled="tab.disabled || false"
       @click="handleClick(tab.value)"
-    >
-      {{ tab.title }}
-    </button>
+      v-html="tab.title"
+    />
+
     <div
       class="tabs__active-line"
       :class="lineClass"
@@ -35,6 +35,10 @@ export default {
     tabs: {
       type: Array,
       required: true,
+    },
+    updated: {
+      type: [Boolean, String, Array],
+      default: undefined,
     },
     wrapperClass: {
       type: String,
@@ -58,6 +62,9 @@ export default {
       if (this.newTab === newCurrentTab) return;
       this.moveActiveLine(newCurrentTab);
     },
+    updated() {
+      this.moveActiveLine(this.currentTab);
+    },
   },
   data: () => ({
     activeLineWidth: 0,
@@ -72,6 +79,8 @@ export default {
       this.newTab = value;
     },
     moveActiveLine(newValue) {
+      if (!this.currentTab) return;
+
       const element = this.$refs[newValue][0];
       if (!element) return;
 
