@@ -1,6 +1,6 @@
 {
   "name": "vue-tabs-with-active-line",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Simple tabs with active bottom line",
   "main": "dist/vue-tabs-with-active-line.umd.js",
   "module": "dist/vue-tabs-with-active-line.esm.js",
