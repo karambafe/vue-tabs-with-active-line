@@ -8,6 +8,7 @@ describe('VueTabsWithActiveLine', () => {
       { title: 'Tab1', value: 'tab1' },
       { title: 'Tab2', value: 'tab2' },
     ],
+    updated: 'currentValue',
   };
 
   it('should render correct count buttons', () => {
@@ -48,6 +49,26 @@ describe('VueTabsWithActiveLine', () => {
       wrapper.vm.handleClick('tab2');
       wrapper.vm.moveActiveLine = jest.fn();
       wrapper.setProps({ currentTab: 'tab2' });
+
+      expect(wrapper.vm.moveActiveLine).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('watch updated', () => {
+    it('should call moveActiveLine if new value is not equal current value', () => {
+      const wrapper = shallowMount(VueTabsWithActiveLine, { propsData });
+
+      wrapper.vm.moveActiveLine = jest.fn();
+      wrapper.setProps({ updated: 'newValue' });
+
+      expect(wrapper.vm.moveActiveLine).toBeCalledWith('tab1');
+    });
+
+    it('should not call moveActiveLine if new value is equal current value', () => {
+      const wrapper = shallowMount(VueTabsWithActiveLine, { propsData });
+
+      wrapper.vm.moveActiveLine = jest.fn();
+      wrapper.setProps({ updated: 'currentValue' });
 
       expect(wrapper.vm.moveActiveLine).not.toHaveBeenCalled();
     });
