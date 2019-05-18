@@ -200,6 +200,17 @@ and `position: absolute;` with `bottom, left, height, background-color` properti
 
 ## Props
 
+| props            | type                   | required | description                         |
+| ---------------- | ---------------------- | :------: | ----------------------------------- |
+| *tabs*           | `Array`                | `true`   | [description](#tabs)                |
+| *currentTab*     | `String`               | `true`   | Active tab value                    |
+| *onClick*        | `Function`             | `true`   | Returns new tab value when clicked  |
+| *updated*        | `Boolean/String/Array` | `false`  | Props for custom update active line |
+| *wrapperClass*   | `String`               | `false`  | Custom class for container          |
+| *tabClass*       | `String`               | `false`  | Custom class for tab item           |
+| *tabActiveClass* | `String`               | `false`  | Custom class for active tab item    |
+| *lineClass*      | `String`               | `false`  | Custom class for active line        |
+
 ##### `tabs`
 
 type: `Array`, required: `true`
@@ -211,43 +222,6 @@ The array must contain objects with the following properties:
  * `value` - required, type `string`. Value of tab
 
  * `disabled` - optional, type `boolean`. Disabled attribute
-
-
-##### `currentTab`
-
-type: `String`, required: `true`.
-
-Required: true
-
-##### `onClick`
-
-type: `Function`, required: `true`.
-
-Returns new tab value when clicked
-
-#### `wrapperClass`
-
-type: `String`, required: `false`.
-
-Custom class for container
-
-#### `tabClass`
-
-type: `String`, required: `false`.
-
-Custom class for tab item
-
-#### `tabActiveClass`
-
-type: `String`, required: `false`.
-
-Custom class for active tab item
-
-#### `lineClass`
-
-type: `String`, required: `false`.
-
-Custom class for active line
 
 ## How to run it locally
 
