@@ -3,6 +3,7 @@ import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
+import commonjs from 'rollup-plugin-commonjs';
 
 const argv = minimist(process.argv.slice(2));
 
@@ -13,6 +14,7 @@ const config = {
     exports: 'named',
   },
   plugins: [
+    commonjs(),
     vue({
       css: true,
       compileTemplate: true,
