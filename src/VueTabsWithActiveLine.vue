@@ -81,8 +81,8 @@ export default {
     moveActiveLine(newValue) {
       if (!this.currentTab) return;
 
+      if (!this.$refs || !this.$refs[newValue] || !this.$refs[newValue][0]) return;
       const element = this.$refs[newValue][0];
-      if (!element) return;
 
       this.activeLineWidth = element.clientWidth;
       this.activeLineOffset = element.offsetLeft;
