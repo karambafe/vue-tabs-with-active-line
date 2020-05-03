@@ -61,6 +61,7 @@ export default {
     currentTab(newCurrentTab) {
       if (this.newTab === newCurrentTab) return;
       this.moveActiveLine(newCurrentTab);
+      this.newTab = newCurrentTab;
     },
     updated() {
       this.moveActiveLine(this.currentTab);
