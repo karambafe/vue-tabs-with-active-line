@@ -91,6 +91,7 @@ export default {
   },
   mounted() {
     this.moveActiveLine(this.currentTab);
+    this.newTab = this.currentTab;
   },
 };
 </script>
